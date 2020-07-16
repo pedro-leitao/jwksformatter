@@ -1,0 +1,4 @@
+Key ID,Serial,Use,Expires,Subject,Issuer
+{{range .Keys}}
+{{- .Kid}},{{.Serial}},{{.Use}},{{(.Expires "2006/02/01")}},{{.Subject}},{{.Issuer}}
+{{end}}
