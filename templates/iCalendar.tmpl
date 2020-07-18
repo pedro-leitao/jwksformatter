@@ -3,17 +3,19 @@ VERSION:2.0
 PRODID:-//jwksformatter//NONSGML jwksformatter//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
+NAME:Certificate Expirations
 {{range .Keys -}}
 BEGIN:VEVENT
-UUID:{{.UUID}}
+UID:{{.UUID}}
 SUMMARY:Certificate {{.Use}}/{{.Kid}} expires
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-DTSTART:{{.Expires "20060201T150405Z"}}
-DTEND:{{.Expires "20060201T150405Z"}}
-DTSTAMP:{{.Expires "20060201T150405Z"}}
+DTSTART;VALUE=DATE:{{.Expires "20060102"}}
+DTEND;VALUE=DATE:{{.Expires "20060102"}}
+DTSTAMP:{{.Expires "20060102T150405Z"}}
 CATEGORIES:Certificate Rotation
 LOCATION:London,Europe
+SUMMARY:Certificate Expiration
 DESCRIPTION:{{- .Kid}},{{.Serial}},{{.Use}},{{.Issuer}}
 END:VEVENT
 {{end -}}
