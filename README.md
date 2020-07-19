@@ -1,8 +1,8 @@
 # A simple JWKS (JSON Web Key Store) templated formatter
 
-Ever forgot when your certificates are due to expire ?
+Ever forgot when your certificates are due to expire, and you have a published [OpenID Connect](https://openid.net/connect/) [JWKS](https://tools.ietf.org/html/rfc7517) ?
 
-`./jwksformatter -templ templates/iCalendar.tmpl -uri https://api.byu.edu/.well-known/byucerts`
+`./jwksformatter -template templates/iCalendar.tmpl -uri https://api.byu.edu/.well-known/byucerts`
 
 And just throw `certs.ics` at Outlook or whatever calendaring application you use. Otherwise just use `templates/csv.tmpl` and import the output CSV into Excel or Google Sheets, or use `template/markdown.tmpl` and have a nice Markdown table like this:
 
